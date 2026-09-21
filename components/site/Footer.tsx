@@ -2,7 +2,11 @@ import Link from "next/link";
 
 import { PROGRAM_OPTIONS } from "@/lib/enquiry";
 
-const PHONES = ["+91 76089 23069", "+91 99567 56715"] as const;
+const PHONES = [
+  "+91 76089 23069",
+  "+91 99567 56715",
+  "+91 89848 02064",
+] as const;
 // TODO (client): Confirm the academy's social URLs before launch.
 
 const SOCIALS = [
@@ -27,6 +31,9 @@ export function Footer() {
             </p>
             <p className="mt-4 text-[14px] leading-relaxed text-white/70">
               A skill-development initiative based in Bhubaneswar, Odisha.
+            </p>
+            <p className="mt-4 text-[13px] text-white/60">
+              Reg. No. 791600085/2016
             </p>
           </div>
 
