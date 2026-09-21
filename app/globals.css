@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Palette from the client logo, expressed as HSL channels so Tailwind's
+       <alpha-value> modifier works (e.g. text-white/80, border-espresso/20). */
+    --espresso: 14 49% 16%; /* #3C1810 */
+    --caramel: 25 76% 31%; /* #8B4513 */
+    --hairline: 0 0% 92%; /* #EAEAEA */
+    --muted: 0 0% 42%; /* #6B6B6B */
+    --body: 0 0% 10%; /* #1A1A1A */
+    --surface: 0 0% 100%; /* #FFFFFF */
+  }
+
+  * {
+    border-color: hsl(var(--hairline));
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: hsl(var(--surface));
+    color: hsl(var(--body));
+    font-feature-settings: "liga" 1, "calt" 1;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Visible focus ring: 2px caramel outline, 2px offset. */
+  :focus-visible {
+    outline: 2px solid hsl(var(--caramel));
+    outline-offset: 2px;
+  }
+
+  /* Remove default focus ring where focus-visible is handled. */
+  :focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+@layer components {
+  /* Skip-to-content link: hidden until focused. */
+  .skip-link {
+    position: absolute;
+    left: 1rem;
+    top: -100px;
+    z-index: 100;
+    background-color: hsl(var(--espresso));
+    color: #ffffff;
+    padding: 0.625rem 1rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    transition: top 150ms ease;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
