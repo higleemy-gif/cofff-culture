@@ -29,7 +29,7 @@ export function About() {
   return (
     <section
       id="about"
-      className="relative overflow-hidden scroll-mt-24 border-b border-hairline"
+      className="relative overflow-hidden scroll-mt-32 border-b border-hairline"
     >
       <CoffeeDecor
         variant="bean"

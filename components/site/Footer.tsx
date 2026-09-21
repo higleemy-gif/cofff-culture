@@ -13,7 +13,7 @@ const SOCIALS = [
 
 export function Footer() {
   return (
-    <footer id="contact" className="scroll-mt-24 bg-espresso text-white/80">
+    <footer id="contact" className="scroll-mt-32 bg-espresso text-white/80">
       <div className="mx-auto max-w-content px-6 py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1 — Academy */}

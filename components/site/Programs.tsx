@@ -52,7 +52,7 @@ export function Programs() {
   return (
     <section
       id="programs"
-      className="relative overflow-hidden scroll-mt-24 border-b border-hairline"
+      className="relative overflow-hidden scroll-mt-32 border-b border-hairline"
     >
       <CoffeeDecor
         variant="coffee"

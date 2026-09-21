@@ -8,7 +8,7 @@ export function FacultyTeaser() {
   return (
     <section
       id="faculty"
-      className="relative overflow-hidden scroll-mt-24 border-b border-hairline"
+      className="relative overflow-hidden scroll-mt-32 border-b border-hairline"
     >
       <CoffeeDecor
         variant="coffee"

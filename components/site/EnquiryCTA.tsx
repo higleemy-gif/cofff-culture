@@ -83,7 +83,7 @@ export function EnquiryCTA() {
   return (
     <section
       id="enquiry"
-      className="relative overflow-hidden scroll-mt-24 bg-espresso text-white"
+      className="relative overflow-hidden scroll-mt-32 bg-espresso text-white"
     >
       <CoffeeDecor
         variant="coffee"
