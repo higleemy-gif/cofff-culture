@@ -2,15 +2,10 @@
 
 const isDev = process.env.NODE_ENV !== "production";
 
-// Strict Content-Security-Policy. Kept on a single line per directive for clarity.
-//
-// NOTE: In development, Next.js relies on eval() for Fast Refresh / HMR and
-// source maps, and it opens a websocket for live reload. Those need
-// 'unsafe-eval' and a ws: connect-src, which we ONLY add in dev. The
-// production policy stays strict.
+// Strict Content-Security-Policy.
+// Development-only permissions are added for Next.js Fast Refresh / HMR.
 const ContentSecurityPolicy = [
   "default-src 'self'",
-  // 'unsafe-inline' is required for Next.js runtime + next/font inline styles.
   `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
   "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
   "font-src 'self' https://fonts.gstatic.com data:",
@@ -43,9 +38,17 @@ const securityHeaders = [
 ];
 
 const nextConfig = {
+  // Required for Cloudflare Pages static deployment.
+  output: "export",
+
   reactStrictMode: true,
+
   poweredByHeader: false,
+
+  // Required because static export does not have
+  // Next.js's server-side image optimization.
   images: {
+    unoptimized: true,
     remotePatterns: [
       {
         protocol: "https",
@@ -53,6 +56,7 @@ const nextConfig = {
       },
     ],
   },
+
   async headers() {
     return [
       {
