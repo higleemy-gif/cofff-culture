@@ -45,19 +45,22 @@ export function Header() {
         scrolled ? "border-b border-hairline" : "border-b border-transparent",
       )}
     >
-      <div className="mx-auto flex h-[84px] max-w-content items-center justify-between px-6">
+      <div className="mx-auto flex h-[96px] max-w-content items-center justify-between px-6">
         <Link
           href="/"
-          className="inline-flex items-center rounded-[4px]"
+          className="inline-flex items-center gap-3 rounded-[8px]"
           aria-label={`${WORDMARK} — home`}
         >
           <Image
             src={logo}
             alt={WORDMARK}
             priority
-            sizes="64px"
-            className="h-16 w-auto"
+            sizes="80px"
+            className="h-20 w-auto rounded-[10px]"
           />
+          <span className="hidden text-[12px] font-medium uppercase tracking-eyebrow text-muted sm:inline">
+            Since 2016
+          </span>
         </Link>
 
         <nav className="hidden md:block" aria-label="Primary">
