@@ -18,11 +18,11 @@ type Course = {
 // Kept as a shared source so Cafe Master (which is Coffee Master + pastry &
 // bakery) stays in sync automatically when the coffee modules change.
 const COFFEE_MASTER_COVERS = [
+  "Bean origins (theory)",
   "Brewing methods",
   "Coffee making",
   "Latte art",
   "Coffee fundamentals & tasting",
-  "Bean origins (theory)",
 ] as const;
 
 const COURSES: Course[] = [
