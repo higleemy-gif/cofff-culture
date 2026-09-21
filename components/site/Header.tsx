@@ -51,13 +51,15 @@ export function Header() {
           className="inline-flex flex-col items-center gap-1 rounded-[8px]"
           aria-label={`${WORDMARK} — home`}
         >
-          <Image
-            src={logo}
-            alt={WORDMARK}
-            priority
-            sizes="80px"
-            className="h-20 w-auto rounded-[10px]"
-          />
+          <span className="block overflow-hidden rounded-2xl border border-hairline">
+            <Image
+              src={logo}
+              alt={WORDMARK}
+              priority
+              sizes="80px"
+              className="block h-20 w-auto rounded-2xl"
+            />
+          </span>
           <span className="text-[11px] font-medium uppercase tracking-eyebrow text-muted">
             Since 2016
           </span>
