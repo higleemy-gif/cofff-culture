@@ -15,6 +15,16 @@ type Course = {
   whatsappMessage: string;
 };
 
+// Kept as a shared source so Cafe Master (which is Coffee Master + pastry &
+// bakery) stays in sync automatically when the coffee modules change.
+const COFFEE_MASTER_COVERS = [
+  "Brewing methods",
+  "Coffee making",
+  "Latte art",
+  "Coffee fundamentals & tasting",
+  "Bean origins (theory)",
+] as const;
+
 const COURSES: Course[] = [
   {
     icon: Coffee,
@@ -22,12 +32,7 @@ const COURSES: Course[] = [
     title: "Coffee Master",
     description:
       "A one-week intensive covering the full craft behind the bar — from the machine to the finished cup.",
-    covers: [
-      "Brewing methods",
-      "Coffee making",
-      "Latte art",
-      "Coffee fundamentals & tasting",
-    ],
+    covers: [...COFFEE_MASTER_COVERS],
     whatsappMessage:
       "Hi, I'm interested in the Coffee Master 7-Day course at Academy of Coffee Culture.",
   },
@@ -38,7 +43,7 @@ const COURSES: Course[] = [
     description:
       "A two-week program that extends coffee craft into pastry and bakery, for a broader café skill set.",
     covers: [
-      "Coffee art",
+      ...COFFEE_MASTER_COVERS,
       "Pastry fundamentals",
       "Basic bakery",
       "Café-ready technique",
